@@ -52,6 +52,7 @@
     </script>
 </head>
 <body class="bg-gray-200">
+    <?php require_once('page\header.html');?>
     <!-- <iframe src="page/header.html">-->
         <div class="relative h-screen bg-gray-800 flex items-center">
 
@@ -106,5 +107,6 @@
         </div>
     </div> 
     <iframe src="page/footer.html">-->
+    <?php require_once('page\header.html');?>
 </body>
 </html>
