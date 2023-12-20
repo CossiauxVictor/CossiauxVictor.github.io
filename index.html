@@ -52,7 +52,23 @@
     </script>
 </head>
 <body class="bg-gray-200">
-    <?php require_once('header.html');?>
+    <header class="bg-gray-100 p-4 flex justify-between items-center">
+        <!-- Logo à gauche avec un lien vers la page d'accueil -->
+        <a href="/" class="text-blue-800">
+            <img src="../image/Logo.png" alt="Logo" class="h-10">
+        </a>
+
+        <!-- Liens à droite -->
+        <nav class="flex items-center space-x-4">
+            <a href="#" class="text-gray-800 hover:underline">Accueil</a>
+            <a href="#" class="text-gray-800 hover:underline">Étude</a>
+            <a href="#" class="text-gray-800 hover:underline">Expérience</a>
+            <a href="#" class="text-gray-800 hover:underline">Compétence</a>
+            <a href="#" class="text-gray-800 hover:underline">Projet</a>
+            <a href="#" class="text-gray-800 hover:underline">Veille</a>
+        </nav>
+    </header>
+    <iframe src="header.html" width="100%" height="200" frameborder="0"></iframe>
     <!-- <iframe src="page/header.html">-->
         <div class="relative h-screen bg-gray-800 flex items-center">
 
@@ -107,6 +123,30 @@
         </div>
     </div> 
     <iframe src="page/footer.html">-->
-    <?php require_once('footer.html');?>
+
+        <footer class="bg-gray-800 text-white p-4">
+            <div class="container mx-auto flex justify-between">
+                <!-- Onglet Contacts -->
+                <div class="flex items-center space-x-4">
+                    <!-- Image GitHub -->
+                    <a href="https://github.com/CossiauxVictor" target="_blank">
+                        <img src="../image/Github.png" alt="GitHub" class="h-6 w-6 hover:opacity-75">
+                    </a>
+        
+                    <!-- Image LinkedIn -->
+                    <a href="https://www.linkedin.com/in/cossiaux-victor/" target="_blank">
+                        <img src="../image/Linkdin.png" alt="LinkedIn" class="h-6 w-6 hover:opacity-75">
+                    </a>
+        
+                    <!-- E-mail -->
+                    <a href="mailto:victor.cossiaux.p@gmail.com" class="hover:text-gray-100">victor.cossiaux.p@gmail.com</a>
+                </div>
+        
+                <!-- Onglet Mentions Légales -->
+                <div>
+                    <a href="mentions-legales.php" class="hover:text-gray-800">Mentions Légales</a>
+                </div>
+            </div>
+        </footer>
 </body>
 </html>
