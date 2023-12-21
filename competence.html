@@ -22,7 +22,7 @@
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-200">
     <header class="bg-gray-100 p-4 flex justify-between items-center transition-all duration-300 ease-in-out transform">
         <!-- Logo à gauche avec un lien vers la page d'accueil -->
         <a href="index.html" class="text-gray-800 hover:text-blue-500 transition duration-300 transform hover:scale-110">
@@ -40,9 +40,15 @@
         </nav>
     </header>
 
+    <div class="relative h-screen flex items-center">
+        <div class="relative z-10 ml-auto mr-auto text-center text-white">
+            <h1 class="text-6xl text-black font-bold">Page en Dévellopement</h1>
+            <div id="textEffect"></div>
+        </div>
 
+    </div>
 
-    <footer class="bg-gray-800 text-white p-4">
+    <footer class="bg-gray-800 text-white p-4 absolute bottom-0 w-full">
         <div class="container mx-auto flex justify-between">
             <!-- Onglet Contacts -->
             <div class="flex items-center space-x-4">
@@ -65,6 +71,6 @@
                 <a href="mentions-legales.php" class="hover:opacity-75">Mentions Légales</a>
             </div>
         </div>
-    </footer>  
+    </footer>
 </body>
 </html>
