@@ -22,7 +22,7 @@
         }
     </style>
 </head>
-<body class="bg-gray-200">
+<body class="bg-gray-100">
     <header class="bg-gray-100 p-4 flex justify-between items-center transition-all duration-300 ease-in-out transform">
         <!-- Logo à gauche avec un lien vers la page d'accueil -->
         <a href="index.html" class="text-gray-800 hover:text-blue-500 transition duration-300 transform hover:scale-110">
@@ -41,10 +41,10 @@
     </header>
 
     <div class="bg-gray-100 p-6">
-        <div id="app" class="max-w-lg mx-auto mt-32">
+        <div id="app" class="w-2/3 mx-auto mt-32">
             
             <!-- Menu des onglets -->
-            <div class="flex mb-6">
+            <div class="flex justify-center mb-6">
                 <button class="mr-1 px-4 py-2 bg-gray-200 rounded-lg focus:outline-none focus:bg-gray-300"
                     @click="currentTab = 'projetSeul'">Projet seul</button>
                 <button class="mr-1 px-4 py-2 bg-gray-200 rounded-lg focus:outline-none focus:bg-gray-300"
@@ -57,25 +57,28 @@
             <div>
                 <div v-if="currentTab === 'projetSeul'">
                     <div class="grid grid-cols-1 gap-4">
-                        <div v-for="projet in projetsSeuls" :key="projet.id" class="bg-white rounded-lg shadow p-4 w-full w-1/3">
+                        <div v-for="projet in projetsSeuls" :key="projet.id" class="bg-white rounded-lg shadow-lg p-4 w-full">
                             <h3 class="font-semibold text-lg" @click="afficherDescription(projet.id)">{{ projet.titre }}</h3>
                             <p v-if="projetSelectionneId === projet.id" v-html="projet.description"></p>
+                            <div class="text-4xl text-center text-gray-500">...</div>
                         </div>
                     </div>
                 </div>
                 <div v-else-if="currentTab === 'projetGroupe'">
                     <div class="grid grid-cols-1 gap-4">
-                        <div v-for="projet in projetsGroupe" :key="projet.id" class="bg-white rounded-lg shadow p-4 w-full w-1/3">
+                        <div v-for="projet in projetsGroupe" :key="projet.id" class="bg-white rounded-lg shadow-lg p-4 w-full">
                             <h3 class="font-semibold text-lg" @click="afficherDescription(projet.id)">{{ projet.titre }}</h3>
                             <p v-if="projetSelectionneId === projet.id">{{ projet.description }}</p>
+                            <div class="text-4xl text-center text-gray-500">...</div>
                         </div>
                     </div>
                 </div>
                 <div v-else>
                     <div class="grid grid-cols-1 gap-4">
-                        <div v-for="projet in projetsFuturs" :key="projet.id" class="bg-white rounded-lg shadow p-4 w-full w-1/3">
+                        <div v-for="projet in projetsFuturs" :key="projet.id" class="bg-white rounded-lg shadow-lg p-4 w-full">
                             <h3 class="font-semibold text-lg" @click="afficherDescription(projet.id)">{{ projet.titre }}</h3>
                             <p v-if="projetSelectionneId === projet.id">{{ projet.description }}</p>
+                            <div class="text-4xl text-center text-gray-500">...</div>
                         </div>
                     </div>
                 </div>
