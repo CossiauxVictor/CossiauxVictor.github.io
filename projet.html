@@ -57,8 +57,8 @@
             <div>
                 <div v-if="currentTab === 'projetSeul'">
                     <div class="grid grid-cols-1 gap-4">
-                        <div v-for="projet in projetsSeuls" :key="projet.id" class="bg-white rounded-lg shadow-lg p-4 w-full">
-                            <h3 class="font-semibold text-lg" @click="afficherDescription(projet.id)">{{ projet.titre }}</h3>
+                        <div v-for="projet in projetsSeuls" :key="projet.id" class="bg-white rounded-lg shadow-lg p-4 w-full" @click="afficherDescription(projet.id)">
+                            <h3 class="font-semibold text-lg">{{ projet.titre }}</h3>
                             <p v-if="projetSelectionneId === projet.id" v-html="projet.description"></p>
                             <div class="text-4xl text-center text-gray-500">...</div>
                         </div>
@@ -66,8 +66,8 @@
                 </div>
                 <div v-else-if="currentTab === 'projetGroupe'">
                     <div class="grid grid-cols-1 gap-4">
-                        <div v-for="projet in projetsGroupe" :key="projet.id" class="bg-white rounded-lg shadow-lg p-4 w-full">
-                            <h3 class="font-semibold text-lg" @click="afficherDescription(projet.id)">{{ projet.titre }}</h3>
+                        <div v-for="projet in projetsGroupe" :key="projet.id" class="bg-white rounded-lg shadow-lg p-4 w-full" @click="afficherDescription(projet.id)">
+                            <h3 class="font-semibold text-lg">{{ projet.titre }}</h3>
                             <p v-if="projetSelectionneId === projet.id">{{ projet.description }}</p>
                             <div class="text-4xl text-center text-gray-500">...</div>
                         </div>
@@ -75,8 +75,8 @@
                 </div>
                 <div v-else>
                     <div class="grid grid-cols-1 gap-4">
-                        <div v-for="projet in projetsFuturs" :key="projet.id" class="bg-white rounded-lg shadow-lg p-4 w-full">
-                            <h3 class="font-semibold text-lg" @click="afficherDescription(projet.id)">{{ projet.titre }}</h3>
+                        <div v-for="projet in projetsFuturs" :key="projet.id" class="bg-white rounded-lg shadow-lg p-4 w-full" @click="afficherDescription(projet.id)">
+                            <h3 class="font-semibold text-lg">{{ projet.titre }}</h3>
                             <p v-if="projetSelectionneId === projet.id">{{ projet.description }}</p>
                             <div class="text-4xl text-center text-gray-500">...</div>
                         </div>
