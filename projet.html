@@ -70,8 +70,8 @@
                 <button class="mr-1 px-4 py-2 bg-gray-200 rounded-lg focus:outline-none focus:bg-gray-300"
                     @click="currentTab = 'projetSeul'">Projets seul</button>
                 <button class="mr-1 px-4 py-2 bg-gray-200 rounded-lg focus:outline-none focus:bg-gray-300"
-                    @click="currentTab = 'projetGroupe'">Projets en groupe</button>
-                <button class="px-4 py-2 bg-gray-200 rounded-lg focus:outline-none focus:bg-gray-300"
+                    @click="currentTab = 'projetGroupe'">Projets de groupe</button>
+                <button class="mr-1 px-4 py-2 bg-gray-200 rounded-lg focus:outline-none focus:bg-gray-300"
                     @click="currentTab = 'projetFutur'">Projets futur</button>
             </div>
     
@@ -79,7 +79,7 @@
             <div>
                 <div v-if="currentTab === 'projetSeul'">
                     <div class="grid grid-cols-1 gap-4">
-                        <h2 class='text-gray-500 text-xl font-bold'>Projet Seul :</h2>
+                        <h2 class='text-gray-500 text-xl font-bold'>Projets seul :</h2>
                         <div v-for="projet in projetsSeuls" :key="projet.id" class="bg-white rounded-lg shadow-lg p-4 w-full" @click="afficherDescription(projet.id)">
                             <h3 class="font-semibold text-lg">{{ projet.titre }}</h3>
                             <p v-if="projetSelectionneId === projet.id" v-html="projet.description"></p>
@@ -88,12 +88,12 @@
                     </div>
                 </div>
                 <div v-else-if="currentTab === 'projetGroupe'">
-                    <h2 class='text-gray-500 text-xl font-bold'>Projet Groupe :</h2>
+                    <h2 class='text-gray-500 text-xl font-bold'>Projets de groupe  :</h2>
                     <br>
                     <div class="grid grid-cols-1 gap-4">
                         <div v-for="projet in projetsGroupe" :key="projet.id" class="bg-white rounded-lg shadow-lg p-4 w-full" @click="afficherDescription(projet.id)">
                             <h3 class="font-semibold text-lg">{{ projet.titre }}</h3>
-                            <p v-if="projetSelectionneId === projet.id">{{ projet.description }}</p>
+                            <p v-if="projetSelectionneId === projet.id" v-html="projet.description"></p>
                             <div class="text-4xl text-center text-gray-500">...</div>
                         </div>
                     </div>
@@ -104,7 +104,7 @@
                     <div class="grid grid-cols-1 gap-4">
                         <div v-for="projet in projetsFuturs" :key="projet.id" class="bg-white rounded-lg shadow-lg p-4 w-full" @click="afficherDescription(projet.id)">
                             <h3 class="font-semibold text-lg">{{ projet.titre }}</h3>
-                            <p v-if="projetSelectionneId === projet.id">{{ projet.description }}</p>
+                            <p v-if="projetSelectionneId === projet.id" v-html="projet.description"></p>
                             <div class="text-4xl text-center text-gray-500">...</div>
                         </div>
                     </div>
@@ -136,18 +136,18 @@
                     projetsFuturs: [
                         {
                             id: 6,
-                            titre: 'Site vitrine un apiculteur local',
-                            description: 'Je vais créer un site vitrine pour un apiculteur 🐝 afin de partager sa passion pour le miel 🍯, utilisant HTML, CSS, JS et PHP pour une expérience interactive et enrichissante !'
+                            titre: 'Site vitrine pour un apiculteur local',
+                            description: 'Je vais réaliser un site vitrine qui lui permettra de partager sa passion pour ses abeilles mais aussi de faire découvrir au plus grand nombre le processus de réalisation de son délicieux miel ! 🐝 🍯 <br> Pour cela, je prévois d’utiliser les langages HTML, CSS, JS et PHP pour offrir aux visiteurs de cette page une expérience qui soit la plus interactive et enrichissante possible ! 💻'
                         },
                         {
                             id: 7,
-                            titre: 'Site vitrine pour une couturière local',
-                            description: "Je vais créer un site vitrine pour une couturière afin de présenter son travail, sa méthode et ses tarifs. Ce projet sera développé en HTML, CSS, JavaScript et PHP pour offrir une expérience interactive et informative aux visiteurs. 🧵✨"
+                            titre: 'Site vitrine pour une couturière locale',
+                            description: "Je vais réaliser un site vitrine qui lui permettra de présenter ses méthodes, ses magnifiques réalisations mais également ses tarifs lui permettant ainsi de partager sa passion. 🧵 <br> Pour cela, je prévois de développer en HTML, CSS, JavaScript et PHP pour offrir une expérience interactive et informative aux visiteurs. 💻"
                         },
                         {
                             id: 8,
-                            titre: 'Site vitrine pour une cirier local',
-                            description: "Je vais construire un site vitrine pour une cirier 🕯️ afin de montrer son processus de travail, ses produits et leurs prix 💰. J'utiliserai HTML, CSS, JS et PHP pour une expérience utilisateur fluide et interactive 🖥️." 
+                            titre: 'Site vitrine pour une cirière locale',
+                            description: "Je vais réaliser un site vitrine afin d’exposer l’ensemble des bougies qu’elle confectionne avec passion mais aussi de partager le processus de réalisation ainsi que les différents tarifs proposés. 🕯️ <br> Pour cela, je prévois d’utiliser les langages HTML, CSS, JS et PHP pour offrir une expérience utilisateur fluide et interactive. 💻" 
                         }
                     ],
                     projetSelectionneId: null
