@@ -250,9 +250,7 @@
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
                 <div class="details">
-                    <h3 id="modal-title"></h3>
-                    <p>Date : <span id="modal-date"></span></p>
-                    <p>Description : <span id="modal-description"></span></p>
+                    <p><span id="modal-description"></span></p>
                 </div>
             </div>
         </div>
@@ -261,7 +259,9 @@
             // Afficher la fenêtre modale
             function openModal(title, description, date, imageUrl) {
                 document.getElementById('myModal').style.display = 'block';
+                document.getElementById('modal-title').innerHTML = title;
                 document.getElementById('modal-description').innerHTML = description;
+                document.getElementById('modal-date').innerHTML = date;
             }
 
             // Fermer la fenêtre modale
